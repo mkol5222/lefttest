@@ -1,0 +1,6 @@
+# example cp-fce04623-a09d-4bc8-b0ec-054f7f26eede42623815-91d6-4e5f-b25a-4cd929ef39da
+CPAPPSEC1:
+  name: Check Point AppSec token
+  and:
+  - pattern: cp-fce04623-a09d-4bc8-b0ec-054f7f26eede42623815-91d6-4e5f-b25a-4cd929ef39da
+  
