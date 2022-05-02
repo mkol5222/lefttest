@@ -1,0 +1,21 @@
+rules:
+- id: CHKPNT001
+  name: Visible CheckPoint AppSec Token
+  description: Found a visible CheckPoint AppSec token
+  tags:
+  - checkpoint
+  - services
+  applies_to:
+  - ".*$"
+  severity: error
+  pattern_group:
+    patterns: # pref||                first uuid                                  ||                      second uuid                           |
+    - pattern: "(cp-)([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})"
+      out: 0
+      out_hint: 1
+      pattern_type: multi
+      test_token:
+      - on: 2
+        score: 0.5
+      - on: 3
+        score: 0.5
